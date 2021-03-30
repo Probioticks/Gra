@@ -29,11 +29,16 @@ public class LoadingMenu : MonoBehaviour
        
 
         StartCoroutine(MenuLoad());
-
+        
+    }
+    void Update()
+    {
+        StartCoroutine(Updates());
     }
     public IEnumerator MenuLoad()
     {
         piewszy.SetActive(true);
+
         yield return new WaitForSeconds(czas);
         piewszy.SetActive(false);
         drugi.SetActive(true);
@@ -45,14 +50,33 @@ public class LoadingMenu : MonoBehaviour
         trzeci.SetActive(true);
         yield return new WaitForSeconds(1f);
         drugi.SetActive(false);
-        yield return new WaitForSeconds(12f);
+        
+        yield return new WaitForSeconds(10f);
         
 
 
         SceneManager.LoadScene(SceneName);
+        yield return new WaitForSeconds(1f);
         koniec.SetActive(false);
+        
+
 
     }
+    public IEnumerator Updates()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+            SceneManager.LoadScene(SceneName);
+            yield return new WaitForSeconds(1f);
+            koniec.SetActive(false);
+
+        }
+    }
+    
+
+    
+   
     
    
 }

@@ -9,7 +9,6 @@ ScriptsOnlyBuild:
     - LoadingMenu
     - MainMenu
     - MenuSettings
-    - PauseMenu
     - PlayerEconomy
     - PlayerMovement
     Unity.2D.Animation.Editor.dll:
@@ -26,7 +25,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -36,6 +34,7 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -56,14 +55,12 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
-    - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -100,8 +97,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1714}
-    - Class: 114
       Script: {instanceID: 1964}
     - Class: 114
       Script: {instanceID: 2094}
@@ -121,10 +116,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2840}
     - Class: 114
       Script: {instanceID: 3030}
-    - Class: 114
-      Script: {instanceID: 3052}
-    - Class: 114
-      Script: {instanceID: 3144}
     - Class: 114
       Script: {instanceID: 3762}
     - Class: 114
@@ -254,6 +245,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2636}
     - Class: 114
+      Script: {instanceID: 2648}
+    - Class: 114
       Script: {instanceID: 2678}
     - Class: 114
       Script: {instanceID: 2684}
@@ -265,8 +258,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3038}
     - Class: 114
       Script: {instanceID: 3144}
-    - Class: 114
-      Script: {instanceID: 3840}
     - Class: 114
       Script: {instanceID: 4016}
     - Class: 114
@@ -984,7 +975,7 @@ ScriptsOnlyBuild:
     className: MainMenuCursor
   - hash:
       serializedVersion: 2
-      Hash: 8b21061e9d037d307e029130da878344
+      Hash: 544465e396200a5079d32660e58d0a12
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuSettings

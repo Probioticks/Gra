@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuSettings : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     void Start()
     {
         resolutions = Screen.resolutions;
-
+        
         resolutionDropdown.ClearOptions();
         
         List<string> options = new List<string>();
