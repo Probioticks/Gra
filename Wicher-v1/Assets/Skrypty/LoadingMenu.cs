@@ -35,23 +35,20 @@ public class LoadingMenu : MonoBehaviour
     {
         piewszy.SetActive(true);
         yield return new WaitForSeconds(czas);
-        Debug.Log("1");
         piewszy.SetActive(false);
-
         drugi.SetActive(true);
-
         yield return new WaitForSeconds(czas);
-        Debug.Log("1");
-        drugi.SetActive(false);
+        
+        
 
-        trzeci.SetActive(true);
         videoplayer.SetActive(true);
-
+        trzeci.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        drugi.SetActive(false);
         yield return new WaitForSeconds(12f);
         
 
 
-        
         SceneManager.LoadScene(SceneName);
         koniec.SetActive(false);
 
