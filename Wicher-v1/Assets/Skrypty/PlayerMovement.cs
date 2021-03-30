@@ -39,7 +39,13 @@ public class PlayerMovement : MonoBehaviour
         GameObject swordV = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
         //GameObject swordV = GameObject.Find("Wicher/hand/sword");//Alternatywa
         swordV.SetActive(false);
-    }
+
+        for (int i = 0; i <= 3; i++)
+        {
+            GameObject hitbox = this.gameObject.transform.GetChild(0).GetChild(i).gameObject;
+            hitbox.SetActive(false);
+        }
+    }  
 
 
     void Update()
@@ -57,11 +63,10 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(AttackCo());
         }
-
-        //if(currentState == PlayerState.walk)
-        //{
+        else if(currentState == PlayerState.walk)
+        {
             UpdateAnimationandMove();
-        //} //to sie jeszcze zobaczy
+        } //to sie jeszcze zobaczy
     }
 
         
@@ -89,13 +94,11 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator AttackCo()
     {
-        Debug.Log("Pew");
-        //handAnimator.SetBool("attacking", true);
+        animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;// czeka 1 klatke
-        //handAnimator.SetBool("attacking", false);
-        yield return new WaitForSeconds(0.33f);
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(0.29f);
         currentState = PlayerState.walk;
-        Debug.Log("Pew!");
     }
 }
