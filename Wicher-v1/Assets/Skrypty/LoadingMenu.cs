@@ -12,10 +12,12 @@ public class LoadingMenu : MonoBehaviour
     public GameObject piewszy;
     public GameObject drugi;
     public GameObject trzeci;
+    public GameObject videoplayer;
+    public GameObject koniec;
     public int czas;
     public string SceneName;
-    
-    
+  
+
     void Start()
     {
 
@@ -24,22 +26,7 @@ public class LoadingMenu : MonoBehaviour
         trzeci.SetActive(false);
 
 
-        piewszy.SetActive(true);
-        new WaitForSeconds(czas);
-        Debug.Log("1");
-        piewszy.SetActive(false);
-
-        drugi.SetActive(true);
-
-         new WaitForSeconds(czas);
-        Debug.Log("1");
-        drugi.SetActive(false);
-
-        trzeci.SetActive(true);
-
-         new WaitForSeconds(czas);
-        Debug.Log("1");
-        trzeci.SetActive(false);
+       
 
         StartCoroutine(MenuLoad());
 
@@ -58,13 +45,16 @@ public class LoadingMenu : MonoBehaviour
         drugi.SetActive(false);
 
         trzeci.SetActive(true);
+        videoplayer.SetActive(true);
 
-        yield return new WaitForSeconds(czas);
-        Debug.Log("1");
+        yield return new WaitForSeconds(12f);
         
-        yield return new WaitForSeconds(czas);
+
+
         
         SceneManager.LoadScene(SceneName);
+        koniec.SetActive(false);
+
     }
     
    
