@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum PlayerState
 {
     walk,
@@ -9,8 +10,10 @@ public enum PlayerState
     interact
 }
 
+
 public class PlayerMovement : MonoBehaviour
 {
+
     public float speed;
     public int Money = 100;
     private PlayerEconomy PlayerEconomy;
@@ -20,20 +23,25 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState currentState;
 
     
+
     void Awake()
     {
         PlayerEconomy = GameObject.FindObjectOfType<PlayerEconomy>();
     }
 
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         currentState = PlayerState.walk;
+
+        GameObject swordV = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+        //GameObject swordV = GameObject.Find("Wicher/hand/sword");//Alternatywa
+        swordV.SetActive(false);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.E))
@@ -55,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             UpdateAnimationandMove();
         //} //to sie jeszcze zobaczy
     }
+
         
     void UpdateAnimationandMove()
     {
@@ -70,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("moving", false);
         }
     }
+
     
     void MoveCharacter()
     {
@@ -79,11 +89,13 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator AttackCo()
     {
-        //animator.SetBool("attacking", true);
+        Debug.Log("Pew");
+        //handAnimator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;// czeka 1 klatke
-        //animator.SetBool("attacking", false);
+        //handAnimator.SetBool("attacking", false);
         yield return new WaitForSeconds(0.33f);
         currentState = PlayerState.walk;
+        Debug.Log("Pew!");
     }
 }
