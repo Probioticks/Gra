@@ -313,6 +313,7 @@ MonoBehaviour:
   koniec: {fileID: 743733057}
   czas: 3
   SceneName: Menu
+  isFullScreen: 1
 --- !u!81 &743733063
 AudioListener:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class LoadingMenu : MonoBehaviour
     public GameObject koniec;
     public int czas;
     public string SceneName;
+    public bool isFullScreen;
   
 
     void Start()
@@ -33,7 +34,9 @@ public class LoadingMenu : MonoBehaviour
     }
     void Update()
     {
+      
         StartCoroutine(Updates());
+       
     }
     public IEnumerator MenuLoad()
     {
@@ -75,8 +78,10 @@ public class LoadingMenu : MonoBehaviour
     }
     
 
-    
-   
-    
-   
+
+
+
+
+
+
 }
