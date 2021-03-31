@@ -81,7 +81,6 @@
      <Compile Include="Assets\Skrypty\DialogueManager.cs" />
      <Compile Include="Assets\Skrypty\Dialog.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Skrypty\MainMenuCursor.cs" />
      <Compile Include="Assets\Skrypty\MenuSettings.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
