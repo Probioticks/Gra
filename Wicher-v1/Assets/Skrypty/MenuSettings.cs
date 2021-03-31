@@ -9,21 +9,33 @@ public class MenuSettings : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    
     void Start()
     {
-        resolutions = Screen.resolutions;
         
-        resolutionDropdown.ClearOptions();
-        
-        List<string> options = new List<string>();
-        for (int i = 0; i < resolutions.Length; i++)
+    }
+    public void SetResolution(int ResolutionOption)
+    {
+        string ResolutionOption1 = ResolutionOption.ToString();
+        switch (ResolutionOption1)
         {
-            string option = resolutions[i].width + " x " +  resolutions[i].height;
-            options.Add(option);
-        }
+            case "0":
+                Screen.SetResolution(1920, 1080, true);
+                break;
+            case "1":
+                Screen.SetResolution(1600, 900, true);
+                break;
+            case "2":
+                Screen.SetResolution(1366, 768, true);
+                break;
+            case "3":
+                Screen.SetResolution(1280, 720, true);
+                break;
+            case "4":
+                Screen.SetResolution(1024, 576, true);
+                break;
 
-        resolutionDropdown.AddOptions(options);
+        }
     }
     public void SetVolume (float volume)
     {
