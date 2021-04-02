@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public float smmoth;
-  
+    public float changev;
 
 
     // Start is called before the first frame update
@@ -26,5 +26,16 @@ public class CameraMovement : MonoBehaviour
     } 
 
     }
+    public void RoomTransition()
+    {
 
+        StartCoroutine(Change());
+    }
+    IEnumerator Change()
+    {
+          smmoth = 1;
+        yield return new WaitForSeconds(1f);
+         smmoth -= changev;
+    }
+   
 }

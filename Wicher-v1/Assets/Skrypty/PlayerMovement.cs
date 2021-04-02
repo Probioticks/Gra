@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public PlayerState currentState;
-
     
+
 
     void Awake()
     {
@@ -121,4 +121,16 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
         }
     }
+
+
+    //ROOM TRANSITIONS
+
+   
+
+
+
+
+
+
+    //ROOM TRANSITIONS
 }
