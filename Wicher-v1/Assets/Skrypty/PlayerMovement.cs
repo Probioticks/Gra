@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public PlayerState currentState;
-    
+    public bool InDialog;
 
 
     void Awake()
@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        InDialog = false;
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         currentState = PlayerState.walk;
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             GameObject hitbox = this.gameObject.transform.GetChild(0).GetChild(i).gameObject;
             hitbox.SetActive(false);
         }
-    }  
+    }
 
 
     void Update()
@@ -61,21 +62,24 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetButtonDown("Fire1") && currentState != PlayerState.attack 
+        if (Input.GetButtonDown("Fire1") && currentState != PlayerState.attack
             && currentState != PlayerState.stagger)
         {
-            StartCoroutine(AttackCo());
+            if (InDialog == false)
+            {
+                StartCoroutine(AttackCo());
+            }
         }
-        else if(currentState == PlayerState.walk || currentState == PlayerState.idle)
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationandMove();
         } //to sie jeszcze zobaczy
     }
 
-        
+
     void UpdateAnimationandMove()
     {
-        if (change != Vector3.zero)
+        if (change != Vector3.zero && InDialog == false)
         {
             MoveCharacter();
             animator.SetFloat("moveX", change.x);
@@ -88,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+
     void MoveCharacter()
     {
         currentState = PlayerState.walk;
@@ -121,11 +125,18 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
         }
     }
+    public void WDialogu() {
+        InDialog = true;
+    }
+    public void NiewDialogu()
+    {
+        InDialog = false;
+    }
 
 
     //ROOM TRANSITIONS
 
-   
+
 
 
 
