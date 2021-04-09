@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1437153010782477667}
   m_Layer: 0
   m_Name: Hitbox Right
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1437153011325234537}
   m_Layer: 0
   m_Name: Hitbox Left
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 1437153011553674131}
   m_Layer: 0
   m_Name: Hitbox Up
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437153011754666560}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.0354004, y: -2.3030243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -416,6 +416,7 @@ MonoBehaviour:
   Money: 100
   myRigidbody: {fileID: 1437153011754666563}
   currentState: 0
+  InDialog: 0
 --- !u!61 &1437153011754666562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -534,7 +535,7 @@ GameObject:
   - component: {fileID: 1437153012218574508}
   m_Layer: 0
   m_Name: Hitbox Down
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

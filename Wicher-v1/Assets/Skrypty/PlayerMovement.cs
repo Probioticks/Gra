@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 
+
         if (Input.GetButtonDown("Fire1") && currentState != PlayerState.attack
             && currentState != PlayerState.stagger)
         {
