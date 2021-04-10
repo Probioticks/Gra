@@ -18,6 +18,8 @@ public class Dialogue
     [TextArea(3, 10)]
     public string Npc4;
     [TextArea(3, 10)]
+    public string Npc5;
+    [TextArea(3, 10)]
     public string Option1;
     [TextArea(3, 10)]
     public string Option2;

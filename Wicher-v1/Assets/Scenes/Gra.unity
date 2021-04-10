@@ -718,13 +718,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -853,7 +853,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1875230657}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: OptionTwo
+        m_MethodName: OptionOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1742,19 +1742,22 @@ MonoBehaviour:
   Dialog: {fileID: 1875230653}
   Tell: {fileID: 1108746065}
   Dialogue:
-    name: Bartek.
-    Npc: Siema.
-    Npc1: Co tam.
-    Npc2: OK.
-    Npc3: Zegnaj.
-    Npc4: Wypierdalaj.
-    Option1: 1
-    Option2: 2
-    Option3: 3
-    Option11: 1
-    Option21: 2
-    Option12: 1
-    Option22: 2
+    name: Stranger
+    Npc: Help Help....  Oh Hello Stranger, I am happy to see you.
+    Npc1: Group of Ghuls attacked me..
+    Npc2: Can you kill these Ghuls for me??
+    Npc3: Ok so,  go kill them all!!!!
+    Npc4: ZZZZZZ.....
+    Npc5: Damm.... Nobody want to help poor merchant. This world has gone to dogs..
+    Option1: What Happened??
+    Option2: You look very sad how can I help you??
+    Option3: Bye.
+    Option11: Okay and??
+    Option21: How Can I help you??
+    Option12: 'Okay I go there for your revenge..
+
+'
+    Option22: I could go only if you give me some gold..
   Name: {fileID: 1641427736}
   Npc: {fileID: 1108746067}
   Option1: {fileID: 1759454259}
@@ -1762,7 +1765,7 @@ MonoBehaviour:
   Option3: {fileID: 1768431605}
   been: 0
   PlayerInRange: 0
-  delay: 0.1
+  delay: 0.05
   PlayerMovement: {fileID: 116046705}
   Choose: 0
   dodatek: 1

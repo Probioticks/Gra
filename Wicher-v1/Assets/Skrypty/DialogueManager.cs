@@ -73,12 +73,19 @@ public class DialogueManager : MonoBehaviour
             Option2.text = Dialogue.Option21;
             StartCoroutine(NPC1());
         }
-        else if(Choose == 2)
+        else if (Choose == 2)
         {
-            Button1.SetActive(false);
-            Button2.SetActive(false);
+            Option1.text = Dialogue.Option12;
+            Option2.text = Dialogue.Option22;
             StartCoroutine(NPC2());
+
         }
+        else if (Choose == 3)
+        {
+            OptionEnd();
+        }
+        
+       
     }
     public IEnumerator NPC1()
     {
@@ -92,22 +99,7 @@ public class DialogueManager : MonoBehaviour
 
         }
     }
-    public void OptionTwo()
-    {
-        Choose += dodatek;
-        if (Choose == 1)
-        {
-            Option1.text = Dialogue.Option11;
-            Option2.text = Dialogue.Option21;
-            StartCoroutine(NPC2());
-        }
-        else if (Choose == 2)
-        {
-            Button1.SetActive(false);
-            Button2.SetActive(false);
-            StartCoroutine(NPC1());
-        }
-    }
+    
     public IEnumerator NPC2()
     {
 
@@ -122,12 +114,16 @@ public class DialogueManager : MonoBehaviour
     }
     public void OptionEnd()
     {
-        if (Choose == 2)
+        if (Choose == 3)
         {
             been = true;
             NPC.byl();
+            StartCoroutine(Koniec());
         }
-        StartCoroutine(Koniec());
+        else
+        {
+            StartCoroutine(Koniec1());
+        }
         PlayerMovement.NiewDialogu();
 
     }
@@ -139,6 +135,27 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < Dialogue.Npc3.Length; i++)
         {
             currentText = Dialogue.Npc3.Substring(0, i);
+            this.Npc.text = currentText;
+            yield return new WaitForSeconds(delay);
+
+
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        Dialog.SetActive(false);
+        Button1.SetActive(true);
+        Button2.SetActive(true);
+        Button3.SetActive(true);
+
+    }
+    public IEnumerator Koniec1()
+    {
+        Button1.SetActive(false);
+        Button2.SetActive(false);
+        Button3.SetActive(false);
+        for (int i = 0; i < Dialogue.Npc5.Length; i++)
+        {
+            currentText = Dialogue.Npc5.Substring(0, i);
             this.Npc.text = currentText;
             yield return new WaitForSeconds(delay);
 
