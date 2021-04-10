@@ -27,13 +27,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject Button2;
     public GameObject Button3;
     public GameObject Imie;
+    public NPC NPC;
     public void Awake()
     {
-
+        
     }
     public void Update()
     {
-       
+      
     }
     public void StartDialogue()
     {
@@ -46,12 +47,12 @@ public class DialogueManager : MonoBehaviour
             Option1.text = Dialogue.Option1;
             Option2.text = Dialogue.Option2;
             Option3.text = Dialogue.Option3;
-            StartCoroutine(NPC());
+            StartCoroutine(NPC0());
             PlayerMovement.WDialogu();
         }
         
     }
-    public IEnumerator NPC()
+    public IEnumerator NPC0()
     {
 
         for (int i = 0; i < Dialogue.Npc.Length; i++)
@@ -121,7 +122,11 @@ public class DialogueManager : MonoBehaviour
     }
     public void OptionEnd()
     {
-        been = true;
+        if (Choose == 2)
+        {
+            been = true;
+            NPC.byl();
+        }
         StartCoroutine(Koniec());
         PlayerMovement.NiewDialogu();
 
@@ -147,6 +152,33 @@ public class DialogueManager : MonoBehaviour
         Button3.SetActive(true);
         
     }
-    
-     
+    public void byl()
+    {
+        Dialog.SetActive(true);
+        Tell.SetActive(true);
+        StartCoroutine(NPC4());
+        PlayerMovement.NiewDialogu();
+    }
+    public IEnumerator NPC4()
+    {
+
+        Button1.SetActive(false);
+        Button2.SetActive(false);
+        Button3.SetActive(false);
+        for (int i = 0; i < Dialogue.Npc4.Length; i++)
+        {
+            currentText = Dialogue.Npc4.Substring(0, i);
+            this.Npc.text = currentText;
+            yield return new WaitForSeconds(delay);
+
+
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        Dialog.SetActive(false);
+        Button1.SetActive(true);
+        Button2.SetActive(true);
+        Button3.SetActive(true);
+    }
 }
+

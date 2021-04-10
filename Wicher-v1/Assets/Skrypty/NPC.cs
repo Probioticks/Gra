@@ -11,9 +11,9 @@ public class NPC : MonoBehaviour
     public  DialogueManager DialogueManager;
    
     public bool PlayerInRange;
-    
+    public bool been ;
 
-   public  void OnTriggerStay2D(Collider2D other)
+    public  void OnTriggerStay2D(Collider2D other)
     {
 
         if (other.CompareTag("Player")) 
@@ -41,11 +41,17 @@ public class NPC : MonoBehaviour
 
            
         }
-       
+        if(Input.GetKeyDown(KeyCode.Space) && PlayerInRange == true && been == true)
+        {
+            DialogueManager.byl();
+        }
 
        
 
     }
     
-        
+        public void byl()
+    {
+        been = true;
+    }
     }
