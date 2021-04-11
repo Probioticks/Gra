@@ -2,16 +2,16 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraMovement
-    - DialogueManager
-    - DialogueTrigger
-    - Enemyv1
+    - EnemyGhul
     - Knockback
     - LoadingMenu
     - MainMenu
     - MenuSettings
+    - NPC
     - PauseMenu
     - PlayerEconomy
     - PlayerMovement
+    - RoomTransition
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -106,8 +107,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2096}
     - Class: 114
-      Script: {instanceID: 2114}
-    - Class: 114
       Script: {instanceID: 2488}
     - Class: 114
       Script: {instanceID: 2638}
@@ -120,17 +119,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 2842}
+      Script: {instanceID: 3030}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3054}
-    - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3144}
     - Class: 114
       Script: {instanceID: 3764}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 4156}
+    - Class: 114
+      Script: {instanceID: 4188}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,13 +192,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 3030}
     - Class: 114
-      Script: {instanceID: 4174}
+      Script: {instanceID: 4176}
     - Class: 114
-      Script: {instanceID: 4296}
+      Script: {instanceID: 4298}
     - Class: 114
-      Script: {instanceID: 4634}
+      Script: {instanceID: 4636}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -264,19 +263,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 3030}
     - Class: 114
-      Script: {instanceID: 3040}
+      Script: {instanceID: 3038}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3144}
     - Class: 114
       Script: {instanceID: 4018}
     - Class: 114
-      Script: {instanceID: 4174}
+      Script: {instanceID: 4176}
     - Class: 114
-      Script: {instanceID: 4196}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -416,7 +415,7 @@ ScriptsOnlyBuild:
     className: TMP_DigitValidator
   - hash:
       serializedVersion: 2
-      Hash: aee6badbe1c70bb4ffacfdc4ed230c4f
+      Hash: a9ec315485c771df61f7b11f001b408c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -428,10 +427,10 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: a552972106d2d96368163f14091436d6
+      Hash: 945dd71ab773b4c9246c0963169edc4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Enemyv1
+    className: EnemyGhul
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -582,12 +581,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Knockback
-  - hash:
-      serializedVersion: 2
-      Hash: 229e05b6a7ccaea0cfae324728be460e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DialogueTrigger
   - hash:
       serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
@@ -746,6 +739,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: b8c08734e276a3ef03a7384249f0f7f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VectorValue
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -800,7 +799,7 @@ ScriptsOnlyBuild:
     className: TMP_TextEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 69de2e787407412dd5978a7165e9d9e3
+      Hash: 5a5979b512d87562ef2fd82b2555d1e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMovement
@@ -896,6 +895,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 0e0e97185c1432299c26b08fafda06b6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NPC
+  - hash:
+      serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -906,6 +911,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: f507d5d51457f1c8bcefd37e976e82b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomTransition
   - hash:
       serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
@@ -926,7 +937,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 6905ea390a3623d6f7f594f3499780db
+      Hash: c9919b9fc779329a738421fd67e12739
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueManager
@@ -936,12 +947,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RectMask2D
-  - hash:
-      serializedVersion: 2
-      Hash: 3bc3977821ba6ebf5be8069c5f0f617d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Dialog
   - hash:
       serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47

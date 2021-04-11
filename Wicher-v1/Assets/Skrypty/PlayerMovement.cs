@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
-    public int Money = 100;
-    private PlayerEconomy PlayerEconomy;
+    
     public Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
@@ -28,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        PlayerEconomy = GameObject.FindObjectOfType<PlayerEconomy>();
+       
     }
 
 
@@ -53,10 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            PlayerEconomy.UpdateEconomy(Money);
-        }
+       
 
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
